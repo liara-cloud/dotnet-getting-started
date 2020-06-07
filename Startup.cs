@@ -43,6 +43,16 @@ namespace Liara
 
             app.UseAuthorization();
 
+            string url = Environment.GetEnvironmentVariable("LIARA_URL");
+            if (url == null)
+            {
+                Console.WriteLine("LIARA_URL not set.");
+            }
+            else
+            {
+                Console.WriteLine(url);
+            }
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
