@@ -1,5 +1,5 @@
 {
   "platform": "netcore",
   "app": "dotnet-starter",
-  "port": "5002"
+  "port": "5000"
 }
