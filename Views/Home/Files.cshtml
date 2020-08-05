@@ -1,0 +1,12 @@
+@model file_upload.Models.FileViewModel
+
+<p>List of Files</p>
+
+<ul>
+    @foreach (var item in Model.Files)
+    {
+        <li>
+            @item.Name
+        </li>
+    }
+</ul>
