@@ -35,6 +35,36 @@ namespace file_upload.Controllers
 
             return RedirectToAction("Files");
         }
+        public async Task<IActionResult> UploadFiles(List<IFormFile> files) 
+        {
+            if(files == null || files.Count == 0)
+                return Content("Please select at least one file");
+            
+            foreach(var file in files ){
+
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "file_uploads", file.FileName);
+
+                using(var stream = new FileStream(path, FileMode.Create)){
+                    await file.CopyToAsync(stream);
+                }
+            }
+
+            return RedirectToAction("Files");
+        }
+
+        public async Task<IActionResult> UploadFileViewModel(FileInputModel model) 
+        {
+            if(model.FileToUpload == null)
+                return Content("Please select file");
+            
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "file_uploads", model.FileToUpload.FileName);
+
+            using(var stream = new FileStream(path, FileMode.Create)){
+                await model.FileToUpload.CopyToAsync(stream);
+            }
+
+            return RedirectToAction("Files");
+        }
 
         public IActionResult Files() {
             var model = new FileViewModel();
@@ -56,6 +86,23 @@ namespace file_upload.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Download(string filename){
+            if(filename == null)
+                return Content("Filename is required");
+                    
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "file_uploads", filename);
+
+            var memory = new MemoryStream();
+
+            using(var stream = new FileStream(path, FileMode.Open)){
+                await stream.CopyToAsync(memory);
+            }
+            memory.Position = 0;
+
+            return File(memory, "images/png", Path.GetFileName(path));
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

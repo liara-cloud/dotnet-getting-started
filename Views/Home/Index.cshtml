@@ -10,3 +10,21 @@
         <button type="submit">Upload File</button>
     </form>
 </div>
+<br/>
+<div>
+    <h4>Multiple File Upload</h4>
+    <hr/>
+    <form asp-controller="Home" asp-action="UploadFiles" method="POST" enctype="multipart/form-data">
+        <input type="file" name="files" multiple />
+        <button type="submit">Upload Files</button>
+    </form>
+</div>
+<br/>
+<div>
+    <h4>Single File Upload View Model</h4>
+    <hr/>
+    <form asp-controller="Home" asp-action="UploadFileViewModel" method="POST" enctype="multipart/form-data">
+        <input type="file" name="FileToUpload"  />
+        <button type="submit">Upload File</button>
+    </form>
+</div>
