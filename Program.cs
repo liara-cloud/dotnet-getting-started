@@ -1,26 +1,39 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System.Net;
+using System.Net.Mail;
+using System.IO;
+using dotenv.net;
 
-namespace Liara
+class Program
 {
-    public class Program
+    static void Main()
     {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
+        DotEnv.Load(); // بارگذاری متغیرهای محیطی از فایل .env
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        string mailHost = Environment.GetEnvironmentVariable("MAIL_HOST");
+        int mailPort = int.Parse(Environment.GetEnvironmentVariable("MAIL_PORT"));
+        string mailUser = Environment.GetEnvironmentVariable("MAIL_USERNAME");
+        string mailPassword = Environment.GetEnvironmentVariable("MAIL_PASSWORD");
+
+        // SMTP Conf
+        SmtpClient client = new SmtpClient(mailHost)
+        {
+            Port = mailPort,
+            Credentials = new NetworkCredential(mailUser, mailPassword),
+            EnableSsl = true
+        };
+
+        // Creating and Sending Email  
+        MailMessage message = new MailMessage("info@alinajmabadi.ir", "alinajmabadizadeh2002@gmail.com",
+         "hello", "hello from dotnet!");
+        try
+        {
+            client.Send(message);
+            Console.WriteLine("email sent successfully");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"error in sending email: {ex.Message}");
+        }
     }
 }
