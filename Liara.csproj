@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.7" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.204.1" />
+    <PackageReference Include="DotNetEnv" Version="2.5.0" />
+  </ItemGroup>
+
 </Project>
