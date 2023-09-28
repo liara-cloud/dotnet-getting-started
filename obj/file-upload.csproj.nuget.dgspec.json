@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/praveen/Documents/LearnDotNetCore/file-upload/file-upload.csproj": {}
+    "C:\\Users\\Liara\\Desktop\\file-upload\\file-upload.csproj": {}
   },
   "projects": {
-    "/Users/praveen/Documents/LearnDotNetCore/file-upload/file-upload.csproj": {
+    "C:\\Users\\Liara\\Desktop\\file-upload\\file-upload.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/praveen/Documents/LearnDotNetCore/file-upload/file-upload.csproj",
+        "projectUniqueName": "C:\\Users\\Liara\\Desktop\\file-upload\\file-upload.csproj",
         "projectName": "file-upload",
-        "projectPath": "/Users/praveen/Documents/LearnDotNetCore/file-upload/file-upload.csproj",
-        "packagesPath": "/Users/praveen/.nuget/packages/",
-        "outputPath": "/Users/praveen/Documents/LearnDotNetCore/file-upload/obj/",
+        "projectPath": "C:\\Users\\Liara\\Desktop\\file-upload\\file-upload.csproj",
+        "packagesPath": "C:\\Users\\Liara\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Liara\\Desktop\\file-upload\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/praveen/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Liara\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -35,16 +36,36 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -53,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
