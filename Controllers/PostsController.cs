@@ -136,56 +136,56 @@ public class PostsController : Controller
         };
     }
 
-    public async Task<ActionResult> Insert(PostModel post, IFormFile image)
+    // public async Task<ActionResult> Insert(PostModel post, IFormFile image)
+    public ActionResult Insert(PostModel post, IFormFile image)
     {
         if (post.Image != null && post.Image.Length > 0)
         {
-            // // uploading images using disks
-            // var filePath = Path.Combine("wwwroot/images", post.Image.FileName);
-            // using (var stream = new FileStream(filePath, FileMode.Create))
-            // {
-            //     post.Image.CopyTo(stream);
-            // }
-            // post.ImagePath = "/images/" + post.Image.FileName;
-            // post.ImagePath = post.ImagePath;
-            // Console.WriteLine(post.ImagePath);
+            // uploading images using disks
+            var filePath = Path.Combine("wwwroot/images", post.Image.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                post.Image.CopyTo(stream);
+            }
+            post.ImagePath = "/images/" + post.Image.FileName;
+            post.ImagePath = post.ImagePath;
 
             // // uploading images using S3 Access
-            Env.Load();
-            var config = new AmazonS3Config
-            {
-                ServiceURL = Env.GetString("LIARA_ENDPOINT"),
-                ForcePathStyle = true,
-                SignatureVersion = "4"
-            };
+            // Env.Load();
+            // var config = new AmazonS3Config
+            // {
+            //     ServiceURL = Env.GetString("LIARA_ENDPOINT"),
+            //     ForcePathStyle = true,
+            //     SignatureVersion = "4"
+            // };
 
-            var credentials  = new Amazon.Runtime.BasicAWSCredentials(Env.GetString("LIARA_ACCESS_KEY"), Env.GetString("LIARA_SECRET_KEY"));
-            using var client = new AmazonS3Client(credentials, config);
+            // var credentials  = new Amazon.Runtime.BasicAWSCredentials(Env.GetString("LIARA_ACCESS_KEY"), Env.GetString("LIARA_SECRET_KEY"));
+            // using var client = new AmazonS3Client(credentials, config);
             
-            string objectKey = Guid.NewGuid().ToString() + post.Image.FileName;
-            try
-                {
+            // string objectKey = Guid.NewGuid().ToString() + post.Image.FileName;
+            // try
+            //     {
                 
-                    using var memoryStream = new MemoryStream();
-                    await post.Image.CopyToAsync(memoryStream).ConfigureAwait(false);
+            //         using var memoryStream = new MemoryStream();
+            //         await post.Image.CopyToAsync(memoryStream).ConfigureAwait(false);
 
-                    PutObjectRequest request = new PutObjectRequest
-                    {
-                        BucketName = Env.GetString("LIARA_BUCKET_NAME"),
-                        Key = objectKey,
-                        InputStream = memoryStream,
-                    };
+            //         PutObjectRequest request = new PutObjectRequest
+            //         {
+            //             BucketName = Env.GetString("LIARA_BUCKET_NAME"),
+            //             Key = objectKey,
+            //             InputStream = memoryStream,
+            //         };
 
-                    await client.PutObjectAsync(request);
-                    Console.WriteLine($"File '{objectKey}' uploaded successfully.");
-                }
+            //         await client.PutObjectAsync(request);
+            //         Console.WriteLine($"File '{objectKey}' uploaded successfully.");
+            //     }
 
-            catch (AmazonS3Exception e)
-                {
-                    Console.WriteLine($"Error: {e.Message}");
-                }
-            string fileUrl = $"{Env.GetString("LIARA_ENDPOINT")}/{Env.GetString("LIARA_BUCKET_NAME")}/{objectKey}";    
-            post.ImagePath = fileUrl;
+            // catch (AmazonS3Exception e)
+            //     {
+            //         Console.WriteLine($"Error: {e.Message}");
+            //     }
+            // string fileUrl = $"{Env.GetString("LIARA_ENDPOINT")}/{Env.GetString("LIARA_BUCKET_NAME")}/{objectKey}";    
+            // post.ImagePath = fileUrl;
         }
         post.CreatedAt = DateTime.Now;
         post.UpdatedAt = DateTime.Now;

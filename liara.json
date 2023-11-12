@@ -1,0 +1,13 @@
+{
+    "disks": [
+        {
+            "name": "database",
+            "mountTo": "data/"
+        },
+        
+        {
+            "name": "data",
+            "mountTo": "wwwroot/images"
+        }
+    ]
+}
