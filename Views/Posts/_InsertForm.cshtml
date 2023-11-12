@@ -1,0 +1,56 @@
+@model PostViewModel
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .btn-success {
+        width: 100%;
+    }
+</style>
+
+<div class="container">
+    <form asp-action="Insert" id="form-action" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+                <label asp-for="Post.Title" class="form-label"></label>
+                <input asp-for="Post.Id" type="hidden" class="form-control" />
+                <input asp-for="Post.Title" class="form-control" />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+                <label asp-for="Post.Body" class="form-label"></label>
+                <textarea asp-for="Post.Body" class="form-control" rows="5" cols="40"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+            <label asp-for="Post.Image" class="form-label"></label>
+            <input asp-for="Post.Image" type="file" class="form-control" accept="image/*" />
+        </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10 mt-3 mb-5">
+                <input type="submit" id="form-button" class="btn btn-success" value="Add Post" />
+            </div>
+        </div>
+        
+    </form>
+</div>

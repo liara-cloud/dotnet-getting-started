@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "Contact Us";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+      .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .text-right a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .post {
+        border: 1px solid #ced4da; /* اصلاح رنگ حاشیه پست */
+        padding: 20px; /* افزایش فاصله داخلی پست */
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .post h5 {
+        font-size: 1.1rem;
+        color: #6c757d;
+    }
+
+    .post p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .text-center a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .text-center a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<h2>Contact Us</h2>
+<p>Hi! If you want to contact us, please type your email and submit it: </p>
+<form method="post" action="@Url.Action("SendEmail", "Home")">
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="submit">Submit</button>
+</form>

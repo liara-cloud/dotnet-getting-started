@@ -1,0 +1,94 @@
+@{
+    ViewData["Title"] = "Blog";
+}
+@model PostViewModel
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+      .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .display-4 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .text-right a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .post {
+        border: 1px solid #ced4da; /* اصلاح رنگ حاشیه پست */
+        padding: 20px; /* افزایش فاصله داخلی پست */
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .post h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .post h5 {
+        font-size: 1.1rem;
+        color: #6c757d;
+    }
+
+    .post p {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .text-center a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .text-center a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">My Latest Posts</h1>
+    </div>
+
+    <div class="text-right">
+        <a asp-area="" asp-controller="Posts" asp-action="NewPost">New Post</a>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-8 col-md-8 col-sm-10">
+            <div class="posts-container">
+                @foreach (var p in Model.PostList)
+                {
+                    <div class="post">
+                        <h2><a asp-area="" asp-controller="Posts" asp-action="ViewPost" asp-route-id="@p.Id">@p.Title</a></h2>
+                        <h5 class="text-muted">@p.UpdatedAt</h5>
+                        <p>@p.Body</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

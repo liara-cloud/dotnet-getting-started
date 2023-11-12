@@ -1,0 +1,61 @@
+@model PostViewModel
+
+<style>
+    .post {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .post h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .post h5 {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .post p {
+        font-size: 1.125rem;
+        line-height: 1.6;
+    }
+
+    .post-actions {
+        margin-top: 10px;
+    }
+
+    .post-actions ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .post-actions ul li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .post-actions ul li:last-child {
+        margin-right: 0;
+    }
+</style>
+
+<div class="post">
+    <h2>@Model.Post.Title</h2>
+    <h5>Created At: @Model.Post.CreatedAt</h5>
+    <h5>Last Modified At: @Model.Post.UpdatedAt</h5>
+    <img src="@Model.Post.ImagePath" alt="Post Image" />
+    <p>@Model.Post.Body</p>
+</div>
+
+<div class="post-actions">
+    <ul>
+        <li><a class="btn btn-primary" asp-area="" asp-controller="Posts" asp-action="EditPost" asp-route-id="@Model.Post.Id">Update</a></li>
+        <li><input type="submit" class="btn btn-danger" value="Delete" onClick="deletePost(@Model.Post.Id)" /></li>
+    </ul>
+</div>
