@@ -17,6 +17,13 @@
   cp .env.example .env
 ```
 - if you're using windows, just rename .env.example to .env
+```bash
+  touch wwwroot/images
+```
+```bash
+  touch data/demo.sqlite
+```
+- if you're using windows, create images folder in wwwroot directory and data/demo.sqlite in root 
 - if you're in development Env:
 ```bash
   dotnet watch 
