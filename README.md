@@ -1,17 +1,24 @@
-# ASP.Net Core getting started
+# .NET getting started
 
-Example of how running ASP.Net Core projects on Liara.
+An Example for Deploying Django Projects On [liara](https://liara.ir).
 
-Read more on Liara docs: https://docs.liara.ir/app-deploy/netcore/getting-started
+## Deploying
 
+[Create New Django App](https://console.liara.ir/apps/create) & install the [Liara CLI](https://docs.liara.ir/cli/install)
 
-## Running Locally
+```bash
+$ git clone https://github.com/liara-cloud/dotnet-getting-started.git # or clone your own fork
 
-Make sure you have [.Net Core](https://docs.microsoft.com/en-us/dotnet/core/install/)
+$ cd dotnet-getting-started
 
-```sh
-git clone https://github.com/liara-cloud/dotnetcore-starter
-cd dotnetcore-starter
-dotnet restore
-dotnet run
+$ liara deploy
 ```
+## Availabe Branches
+
+1.  [Disk setup](https://github.com/liara-cloud/dotnet-getting-started/tree/diskSetup)
+2.  [Email Server In Liara](https://github.com/liara-cloud/dotnet-getting-started/tree/email-server)
+3.  [Object Storage](https://github.com/liara-cloud/dotnet-getting-started/tree/object-storage)
+4.  [.NET Blog](https://github.com/liara-cloud/dotnet-getting-started/tree/blog)
+
+## Documentation
+Read more on liara [.NET apps documentation](https://docs.liara.ir/app-deploy/netcore/getting-started/)
