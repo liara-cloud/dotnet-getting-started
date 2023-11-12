@@ -4,16 +4,15 @@
 ## Installation
 
 
-  ```bash
-  git clone 
+```bash
+  git clone https://github.com/liara-cloud/dotnet-getting-started.git
 ```
 ```bash
-  cd 
+  cd dotnet-getting-started
 ```
 ```bash
   git checkout blog
 ```
-
 ```bash
   cp .env.example .env
 ```
