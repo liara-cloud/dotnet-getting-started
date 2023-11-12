@@ -19,6 +19,15 @@ public class PostsController : Controller
     {
         _logger = logger;
         _configuration = configuration;
+        using (var connection = new SqliteConnection(_configuration.GetConnectionString("BlogDataContext")))
+        {
+            connection.Open();
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "CREATE TABLE IF NOT EXISTS post (Id INTEGER PRIMARY KEY AUTOINCREMENT, Title TEXT, Body TEXT, CreatedAt TEXT, UpdatedAt TEXT, ImagePath TEXT)";
+                command.ExecuteNonQuery();
+            }
+        }
     }
 
     public IActionResult Index()
