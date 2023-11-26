@@ -1,6 +1,6 @@
 # .NET getting started
 
-An Example for Deploying Django Projects On [liara](https://liara.ir).
+An Example for Deploying DotNet Projects On [liara](https://liara.ir).
 
 ## Deploying
 
