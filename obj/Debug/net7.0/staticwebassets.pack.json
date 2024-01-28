@@ -249,6 +249,50 @@
       "PackagePath": "staticwebassets\\uploads\\.gitignore"
     },
     {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_2f60.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_2f60.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_515e.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_515e.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_7262.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_7262.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_8e35.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_8e35.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_902d.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_902d.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_9398.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_9398.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_b5ec.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_b5ec.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_bc62.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_bc62.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_ccf2.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_ccf2.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_ccf5.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_ccf5.png"
+    },
+    {
+      "Id": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_d85c.png",
+      "PackagePath": "staticwebassets\\uploads\\liara-poster_d85c.png"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.diskSetup.props",
       "PackagePath": "build\\diskSetup.props"
     },
