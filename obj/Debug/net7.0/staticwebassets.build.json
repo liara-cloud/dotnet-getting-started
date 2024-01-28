@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ea+2hiZutcYHdaR5wobiGq80lfBEJgFukrhGqxsMxXg=",
+  "Hash": "q8/cmzQXq5ZxgZEh+6WnhHGxeoser/j2k5B08z5iYyg=",
   "Source": "diskSetup",
   "BasePath": "_content/diskSetup",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot\\uploads\\liara-poster_2f60.png"
     },
     {
+      "Identity": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_4e10.png",
+      "SourceId": "diskSetup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\",
+      "BasePath": "_content/diskSetup",
+      "RelativePath": "uploads/liara-poster_4e10.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\liara-poster_4e10.png"
+    },
+    {
       "Identity": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_515e.png",
       "SourceId": "diskSetup",
       "SourceType": "Discovered",
@@ -1222,6 +1239,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\liara-poster_bc62.png"
+    },
+    {
+      "Identity": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_c80b.png",
+      "SourceId": "diskSetup",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\",
+      "BasePath": "_content/diskSetup",
+      "RelativePath": "uploads/liara-poster_c80b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\liara-poster_c80b.png"
     },
     {
       "Identity": "C:\\Users\\Liara\\Desktop\\diskSetup\\wwwroot\\uploads\\liara-poster_ccf2.png",
