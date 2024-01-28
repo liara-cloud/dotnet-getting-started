@@ -1,0 +1,8 @@
+{
+    "disks": [
+        {
+            "name": "",
+            "mountTo": "wwwroot/uploads"
+        }
+    ]
+}
