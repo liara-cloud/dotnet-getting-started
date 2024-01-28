@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "29qcIxh262XE/0ka5OURX+yaip7hGqVazRhtD+4N+HI1Ciom5bbF2HkhiG3FiYIjp3Bys6bZiBOk1w7k9fqlyA==",
+  "dgSpecHash": "4n+l7Ng/KCOWd11HGf4LVGnsH8MYCz42tK/82WgzQfrFfzNqvosdjR5jR1KYCi8iI9j432/M6LrQLKa+N3rc7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Liara\\Desktop\\file-upload\\file-upload.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Liara\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Liara\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Liara\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\Liara\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Liara\\Desktop\\diskSetup\\diskSetup.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

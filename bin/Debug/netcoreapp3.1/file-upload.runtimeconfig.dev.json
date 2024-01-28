@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\Liara\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Liara\\.nuget\\packages"
-    ]
-  }
-}
