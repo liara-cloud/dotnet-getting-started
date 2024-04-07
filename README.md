@@ -11,8 +11,6 @@ $ git clone https://github.com/liara-cloud/dotnet-getting-started.git # or clone
 
 $ cd dotnet-getting-started
 
-$ checkout "dotnet-7.0"
-
 $ liara deploy
 ```
 ## Availabe Branches
