@@ -19,6 +19,7 @@ $ liara deploy
 2.  [Email Server In Liara](https://github.com/liara-cloud/dotnet-getting-started/tree/email-server)
 3.  [Object Storage](https://github.com/liara-cloud/dotnet-getting-started/tree/object-storage)
 4.  [.NET Blog](https://github.com/liara-cloud/dotnet-getting-started/tree/blog)
+5.  [EF Core](https://github.com/liara-cloud/dotnet-getting-started/tree/ef-core)
 
 ## Documentation
 Read more on liara [.NET apps documentation](https://docs.liara.ir/app-deploy/netcore/getting-started/)
