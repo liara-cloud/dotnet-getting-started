@@ -1,39 +1,50 @@
-using System;
 using System.Net;
 using System.Net.Mail;
-using System.IO;
 using dotenv.net;
 
-class Program
+DotEnv.Load(); // Load the environment variables from .env file
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/send-test-email", async context =>
 {
-    static void Main()
+    // Read SMTP settings from environment variables
+    var smtpHost = Environment.GetEnvironmentVariable("MAIL_HOST");
+    int smtpPort = int.Parse(Environment.GetEnvironmentVariable("MAIL_PORT") ?? "587");
+    var smtpUser = Environment.GetEnvironmentVariable("MAIL_USER");
+    var smtpPassword = Environment.GetEnvironmentVariable("MAIL_PASSWORD");
+    var fromAddress = Environment.GetEnvironmentVariable("MAIL_FROM_ADDRESS") ?? "info@example.com";
+    var toAddress = "recipient@example.com"; // Replace with recipient's email address
+
+    // Create a new SmtpClient
+    using (var smtpClient = new SmtpClient(smtpHost, smtpPort))
     {
-        DotEnv.Load(); // بارگذاری متغیرهای محیطی از فایل .env
+        smtpClient.EnableSsl = true; // Use TLS encryption
+        smtpClient.Credentials = new NetworkCredential(smtpUser, smtpPassword);
 
-        string mailHost = Environment.GetEnvironmentVariable("MAIL_HOST");
-        int mailPort = int.Parse(Environment.GetEnvironmentVariable("MAIL_PORT"));
-        string mailUser = Environment.GetEnvironmentVariable("MAIL_USERNAME");
-        string mailPassword = Environment.GetEnvironmentVariable("MAIL_PASSWORD");
-
-        // SMTP Conf
-        SmtpClient client = new SmtpClient(mailHost)
+        // Create the email message
+        var mailMessage = new MailMessage(fromAddress, toAddress)
         {
-            Port = mailPort,
-            Credentials = new NetworkCredential(mailUser, mailPassword),
-            EnableSsl = true
+            Subject = "Test Email",
+            Body = "<h2>This is a test email sent from a .NET Core application using SMTP<h2>",
+            IsBodyHtml = true
         };
 
-        // Creating and Sending Email  
-        MailMessage message = new MailMessage("info@alinajmabadi.ir", "alinajmabadizadeh2002@gmail.com",
-         "hello", "hello from dotnet!");
+        // Add custom headers
+        mailMessage.Headers.Add("x-liara-tag", "test-tag");
+
+        // Send the email
         try
         {
-            client.Send(message);
-            Console.WriteLine("email sent successfully");
+            await smtpClient.SendMailAsync(mailMessage);
+            await context.Response.WriteAsync("Test email sent successfully!");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"error in sending email: {ex.Message}");
+            await context.Response.WriteAsync($"Failed to send email: {ex.Message}");
         }
     }
-}
+});
+
+app.Run();
