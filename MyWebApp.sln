@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-getting-started", "dotnet-getting-started.csproj", "{984485B7-784B-48D5-83BC-256D8EED62EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWebApp", "MyWebApp.csproj", "{FC4E4705-C7A6-4555-8120-81631B0A7DB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{984485B7-784B-48D5-83BC-256D8EED62EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{984485B7-784B-48D5-83BC-256D8EED62EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{984485B7-784B-48D5-83BC-256D8EED62EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{984485B7-784B-48D5-83BC-256D8EED62EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4E4705-C7A6-4555-8120-81631B0A7DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4E4705-C7A6-4555-8120-81631B0A7DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4E4705-C7A6-4555-8120-81631B0A7DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4E4705-C7A6-4555-8120-81631B0A7DB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {02103D40-6A3F-410F-9B8E-FEE940D3B127}
+		SolutionGuid = {6398A2DF-8A5F-4FAE-8F5A-C2CB81CAF871}
 	EndGlobalSection
 EndGlobal

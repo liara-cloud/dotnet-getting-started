@@ -1,6 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Home page";
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Liara";
 }
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="@Url.Content("~/static/welcome.css")" rel="stylesheet">
     <title>Deployed to Liara</title>
 </head>
 
@@ -18,9 +20,7 @@
     </h1>
 
     <canvas id="drawing_canvas"></canvas>
-
-    <script src="@Url.Content("~/static/welcome.js")"></script>
-
 </body>
 
 </html>
+
