@@ -1,0 +1,68 @@
+﻿@model IEnumerable<string>
+@{
+    ViewData["Title"] = "File Manager";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>File Manager</h1>
+
+        <!-- Upload Form -->
+        <form class="upload-form" method="post" enctype="multipart/form-data" asp-action="UploadFile">
+            <input type="file" name="file" />
+            <button type="submit">Upload File</button>
+        </form>
+
+        <!-- Pre-Signed URL -->
+        @if (ViewBag.PresignedUrl != null)
+        {
+            <p><strong>Pre-Signed URL:</strong> <a href="@ViewBag.PresignedUrl">@ViewBag.PresignedUrl</a></p>
+        }
+
+        <!-- Permanent URL -->
+        @if (ViewBag.PermanentUrl != null)
+        {
+            <p><strong>Permanent URL:</strong> <a href="@ViewBag.PermanentUrl">@ViewBag.PermanentUrl</a></p>
+        }
+
+        <!-- File List -->
+        <ul>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var file in Model)
+                {
+                    <li>
+                        <span>@file</span>
+                        <div class="actions">
+                            <form class="inline-form" method="post" asp-action="DeleteFile">
+                                <input type="hidden" name="fileName" value="@file" />
+                                <button type="submit" class="delete">Delete</button>
+                            </form>
+                            <form class="inline-form" method="post" asp-action="GeneratePresignedUrl">
+                                <input type="hidden" name="fileName" value="@file" />
+                                <button type="submit">Generate Pre-Signed URL</button>
+                            </form>
+                            <form class="inline-form" method="post" asp-action="GetPermanentUrl">
+                                <input type="hidden" name="fileName" value="@file" />
+                                <button type="submit">Get Permanent URL</button>
+                            </form>
+                        </div>
+                    </li>
+                }
+            }
+            else
+            {
+                <li>No files found in the bucket.</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
